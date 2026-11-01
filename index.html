@@ -1,0 +1,625 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="Папки для ноутбука и косметички по вашим размерам: главный экран и структура сайта Адаи">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Адая — главный экран и структура сайта">
+<meta property="og:description" content="Папки для ноутбука и косметички по вашим размерам: главный экран и структура сайта Адаи">
+<meta property="og:image" content="https://mmaemi77-ctrl.github.io/adaya/og-glavnyi.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Адая — главный экран</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@500;600;700&family=Nunito:wght@400;600;700;800;900&display=swap">
+<style>
+/* Layout: витрина-мозаика из шаблона «Магазин». Перламутрово-голубая плитка со стёжкой ромбом и обещанием «по вашим размерам», большая плитка с фото изделий и переключателем, под ними строка подбора по ноутбуку; ниже структура сайта мини-макетами и живая заявка для компаний */
+:root{
+  --bg:#F4F5FA;
+  --surface:#FFFFFF;
+  --ink:#1F2238;
+  --muted:#5F6482;
+  --line:#DFE2EE;
+  --peri:#C7D4F5;
+  --peri-soft:#E6ECFB;
+  --accent:#4557C2;
+  --on-accent:#FFFFFF;
+  --butter:#F3DD72;
+  --rose:#F3C6D1;
+  --wine:#7B1E2B;
+  --thread:#C2577A;
+  --display:"Comfortaa","Trebuchet MS",system-ui,sans-serif;
+  --body:"Nunito",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --tape:#F3DD72;
+  --tape-ink:#3A3524;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#13141D;--surface:#1C1E2B;--ink:#EDEFF9;--muted:#A2A7C2;--line:#2D3044;--peri:#34406E;--peri-soft:#232843;--accent:#AFBDF4;--on-accent:#13141D;--butter:#8C7D36;--rose:#7C4A58;--wine:#D27382;--thread:#F0A3BC;--tape:#E2CA62;--tape-ink:#2E2A1C;color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#13141D;--surface:#1C1E2B;--ink:#EDEFF9;--muted:#A2A7C2;--line:#2D3044;--peri:#34406E;--peri-soft:#232843;--accent:#AFBDF4;--on-accent:#13141D;--butter:#8C7D36;--rose:#7C4A58;--wine:#D27382;--thread:#F0A3BC;--tape:#E2CA62;--tape-ink:#2E2A1C;color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.55;margin:0;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--bg)}
+.wrap{max-width:1180px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--display);font-weight:700;margin:0;line-height:1.12;text-wrap:balance;letter-spacing:-.01em}
+h2{font-size:clamp(26px,4vw,40px)}
+p{margin:0}
+a{color:inherit}
+button{font-family:var(--body)}
+.eyebrow{font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:800;color:var(--muted)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:var(--ink);color:var(--bg);border:0;border-radius:999px;padding:14px 24px;font-weight:800;font-size:15px;cursor:pointer;text-decoration:none;transition:transform .15s,background .2s;white-space:nowrap}
+.btn:hover{transform:translateY(-2px)}
+.btn.accent{background:var(--accent);color:var(--on-accent)}
+.btn.ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--ink)}
+.btn.sm{padding:10px 16px;font-size:14px}
+.btn svg{width:18px;height:18px;flex:none}
+.link{background:none;border:0;padding:0;font:inherit;color:inherit;text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+
+/* шапка */
+.topline{background:var(--ink);color:var(--bg);font-size:13px;font-weight:700;text-align:center;padding-block:8px}
+.topline .wrap{display:flex;justify-content:center;gap:8px 44px;flex-wrap:wrap}
+@media (max-width:520px){.topline .wrap{gap:2px}}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;gap:22px;padding-block:12px}
+.logo{display:inline-flex;align-items:center;gap:10px;text-decoration:none;font-family:var(--display);font-weight:700;font-size:21px;letter-spacing:.01em}
+.logo .mark{width:38px;height:38px;border-radius:50%;background:var(--peri);display:grid;place-items:center;font-size:19px;color:var(--surface);box-shadow:0 0 0 3px var(--surface),0 0 0 4px var(--line);line-height:1;padding-bottom:3px}
+nav{display:flex;gap:22px;margin-left:auto;font-weight:800;font-size:14px}
+nav a{text-decoration:none;color:var(--muted)}
+nav a:hover{color:var(--ink)}
+header .btn{margin-left:4px}
+@media (max-width:860px){nav{display:none}header .btn{margin-left:auto}}
+.draftnote{font-size:13px;color:var(--muted);text-align:center;padding-block:10px 0}
+.draftnote b{color:var(--ink)}
+
+/* главный экран */
+.hero{display:grid;grid-template-columns:1.05fr 1fr;gap:14px;padding-block:14px 10px}
+.t-main{position:relative;border-radius:34px;padding:clamp(26px,4vw,46px);display:flex;flex-direction:column;justify-content:space-between;gap:26px;min-height:590px;overflow:hidden;
+  background-color:var(--peri);
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64'%3E%3Cpath d='M0 0L64 64M64 0L0 64' stroke='%23fff' stroke-opacity='.5' stroke-width='1.3' stroke-dasharray='5 4' fill='none'/%3E%3C/svg%3E");
+  background-size:64px 64px}
+.t-main::after{content:"";position:absolute;inset:12px;border:1.5px dashed color-mix(in srgb,var(--surface) 75%,transparent);border-radius:26px;pointer-events:none}
+.t-main > *{position:relative;z-index:1}
+.t-main .tagrow{display:flex;flex-wrap:wrap;gap:8px}
+.chip{display:inline-flex;align-items:center;gap:6px;background:var(--surface);color:var(--ink);border-radius:999px;padding:7px 14px;font-size:13px;font-weight:800}
+.t-main h1{font-size:clamp(36px,5vw,60px);line-height:1.02;margin-top:4px}
+.seam{background-image:linear-gradient(90deg,var(--thread) 0 9px,transparent 9px 15px);background-size:15px 3px;background-repeat:repeat-x;background-position:0 94%;padding-bottom:6px;white-space:nowrap;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.tape{position:relative;display:flex;justify-content:space-between;align-items:flex-end;gap:10px;height:42px;max-width:430px;margin-top:22px;padding:0 6px 6px 14px;border-radius:4px;transform:rotate(-1.6deg);transform-origin:left;color:var(--tape-ink);font-size:12.5px;font-weight:800;
+  background:repeating-linear-gradient(90deg,var(--tape-ink) 0 1.5px,transparent 1.5px 50px) 14px 0/calc(100% - 14px) 15px no-repeat,repeating-linear-gradient(90deg,color-mix(in srgb,var(--tape-ink) 70%,transparent) 0 1px,transparent 1px 10px) 14px 0/calc(100% - 14px) 8px no-repeat,var(--tape);
+  box-shadow:0 8px 18px rgb(30 34 60 / .14)}
+.tape b{background:var(--surface);color:var(--ink);border-radius:999px;padding:2px 10px;font-variant-numeric:tabular-nums}
+.t-main .sub{font-size:clamp(16px,1.6vw,18.5px);max-width:40ch;margin-top:16px;font-weight:600}
+.cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.cta .btn.ghost{background:color-mix(in srgb,var(--surface) 55%,transparent);box-shadow:none}
+.facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;border-top:1.5px dashed color-mix(in srgb,var(--ink) 30%,transparent);padding-top:16px}
+.facts b{display:block;font-family:var(--display);font-weight:700;font-size:clamp(17px,1.8vw,21px);line-height:1.2}
+.facts span{display:block;font-size:13px;color:color-mix(in srgb,var(--ink) 72%,transparent);margin-top:4px;line-height:1.35}
+
+.t-photo{position:relative;border-radius:34px;overflow:hidden;background:#F6F5F2;min-height:590px}
+.t-photo > img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:opacity .35s}
+.t-photo > img.fade{opacity:0}
+.t-photo .size{position:absolute;top:20px;left:20px;z-index:2;background:var(--ink);color:var(--bg);border-radius:999px;padding:7px 14px;font-size:13px;font-weight:800}
+.panel{position:absolute;left:14px;right:14px;bottom:14px;z-index:2;background:var(--surface);border-radius:24px;padding:14px 14px 14px 20px;display:flex;align-items:center;gap:14px;flex-wrap:wrap;box-shadow:0 14px 40px rgb(30 34 60 / .12)}
+.panel .info{flex:1;min-width:170px;display:grid;gap:2px}
+.panel .name{font-family:var(--display);font-weight:700;font-size:17px;line-height:1.25}
+.panel .spec{font-size:13.5px;color:var(--muted)}
+.thumbs{position:absolute;top:14px;right:14px;z-index:2;display:flex;gap:6px;padding:6px;border-radius:20px;background:color-mix(in srgb,var(--surface) 82%,transparent);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.panel .coll{font-size:11.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--thread)}
+.thumbs button{width:46px;height:46px;border-radius:13px;border:0;padding:0;overflow:hidden;cursor:pointer;background:#F6F5F2;box-shadow:0 0 0 1.5px var(--line);opacity:.65;transition:opacity .2s,box-shadow .2s}
+.thumbs button:hover{opacity:1}
+.thumbs button[aria-pressed="true"]{opacity:1;box-shadow:0 0 0 2px var(--surface),0 0 0 4px var(--ink)}
+.thumbs img{width:100%;height:100%;object-fit:cover;display:block}
+
+.pick{grid-column:1/-1;background:var(--surface);border-radius:28px;padding:16px;display:grid;grid-template-columns:minmax(150px,1.1fr) repeat(4,minmax(0,1fr)) auto;gap:12px;align-items:end;border:1px solid var(--line)}
+.pick .lbl{font-family:var(--display);font-weight:700;font-size:17px;line-height:1.25;padding:0 6px 8px}
+.pick .lbl small{display:block;font-family:var(--body);font-weight:700;font-size:13px;color:var(--muted);margin-top:4px}
+.field{display:grid;gap:6px;min-width:0}
+.field > span{font-size:12px;font-weight:800;color:var(--muted);letter-spacing:.06em;text-transform:uppercase;padding-left:4px}
+select,input[type=text],input[type=tel]{font:600 15px var(--body);color:var(--ink);background:var(--bg);border:1.5px solid var(--line);border-radius:14px;padding:12px 12px;width:100%;min-width:0}
+select:focus,input:focus{border-color:var(--accent);outline:none}
+.pick .own{grid-column:2/-2;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.pick .own input{width:92px;flex:none}
+.pick .own span{font-size:14px;color:var(--muted);font-weight:700}
+@media (max-width:1020px){.pick{grid-template-columns:repeat(2,minmax(0,1fr))}.pick .lbl{grid-column:1/-1;padding-bottom:0}.pick .btn{grid-column:1/-1}.pick .own{grid-column:1/-1}}
+@media (max-width:860px){.hero{grid-template-columns:1fr}.t-main{min-height:0}.t-photo{min-height:0;aspect-ratio:1/1.05;max-width:100%}}
+@media (max-width:520px){.t-photo .size{display:none}.thumbs{left:50%;right:auto;transform:translateX(-50%)}.thumbs button{width:40px;height:40px;border-radius:11px}.facts{grid-template-columns:1fr;gap:10px}.facts div{display:flex;gap:10px;align-items:baseline}.facts span{margin:0}.pick{grid-template-columns:1fr}.t-photo{aspect-ratio:4/5}}
+
+/* структура */
+section{padding-block:56px}
+.s-head .lead{font-size:clamp(16px,1.7vw,19px);color:var(--muted);max-width:56ch;margin-top:12px;font-weight:600}
+.flow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:28px;counter-reset:f}
+.flow div{position:relative;background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:18px 18px 18px;display:grid;gap:4px;align-content:start}
+.flow div::before{counter-increment:f;content:counter(f);width:28px;height:28px;border-radius:50%;background:var(--peri);display:grid;place-items:center;font-family:var(--display);font-weight:700;font-size:14px;margin-bottom:6px}
+.flow div:last-child{background:var(--accent);color:var(--on-accent);border-color:var(--accent)}
+.flow div:last-child::before{background:var(--on-accent);color:var(--accent)}
+.flow b{font-size:16px;line-height:1.3}
+.flow span{font-size:14px;opacity:.75}
+@media (max-width:820px){.flow{grid-template-columns:1fr 1fr}}
+@media (max-width:460px){.flow{grid-template-columns:1fr}}
+
+.blocks{display:grid;gap:14px;padding-bottom:20px}
+.blk{display:grid;grid-template-columns:minmax(0,340px) minmax(0,1fr);gap:clamp(18px,3vw,40px);align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:28px;padding:clamp(14px,2vw,22px);scroll-margin-top:90px}
+.blk .txt{display:grid;gap:10px;min-width:0;padding-right:8px}
+.blk .no{font-family:var(--display);font-weight:700;font-size:14px;color:var(--accent)}
+.blk h3{font-size:clamp(20px,2.2vw,26px)}
+.blk .why{font-weight:800;font-size:15.5px}
+.blk ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px}
+.blk li{font-size:14px;font-weight:700;background:var(--bg);border-radius:999px;padding:6px 12px;color:var(--muted)}
+@media (max-width:760px){.blk{grid-template-columns:1fr}.blk .txt{padding:0 4px 6px}}
+
+/* мини-макеты */
+.wf{aspect-ratio:16/10;max-width:100%;border-radius:18px;background:var(--bg);border:1px solid var(--line);padding:10px;display:grid;gap:7px;overflow:hidden}
+.wf i{display:block;border-radius:8px;background:var(--line)}
+.ln{display:block;height:7px;border-radius:4px;background:var(--line)}
+.ln.w{background:color-mix(in srgb,var(--surface) 85%,transparent)}
+.ln.a{background:var(--accent)}
+.pl{display:block;height:20px;border-radius:999px;background:var(--surface);border:1px solid var(--line)}
+.pl.a{background:var(--accent);border-color:var(--accent)}
+.ph{border-radius:10px;background:#F6F5F2 center/cover no-repeat;min-height:0}
+.wcard{background:var(--surface);border-radius:10px;padding:4px;display:grid;gap:4px;align-content:start;min-width:0}
+.wcard .ph{aspect-ratio:1}
+.wcard .ln{height:5px;margin-inline:2px}
+.wf .peri{background-color:var(--peri);border-radius:10px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='22' height='22'%3E%3Cpath d='M0 0L22 22M22 0L0 22' stroke='%23fff' stroke-opacity='.55' stroke-width='1' stroke-dasharray='2.5 2' fill='none'/%3E%3C/svg%3E")}
+.wf .tiny{font-size:10px;font-weight:800;color:var(--muted);letter-spacing:.04em;line-height:1.2}
+
+/* живая заявка для компаний */
+.corp{background:var(--surface);border:1px solid var(--line);border-radius:32px;padding:clamp(18px,3vw,34px);display:grid;gap:22px;scroll-margin-top:90px}
+.corp-top{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:end}
+.corp-top .no{font-family:var(--display);font-weight:700;font-size:14px;color:var(--accent)}
+.corp-top h3{font-size:clamp(24px,3vw,34px);margin-top:6px}
+.corp-top p{color:var(--muted);font-weight:600;max-width:52ch;margin-top:8px}
+.live{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:800;background:var(--peri-soft);border-radius:999px;padding:7px 14px}
+.live::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--thread);animation:blink 1.6s ease-in-out infinite}
+@keyframes blink{50%{opacity:.25}}
+.corp-grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:clamp(16px,3vw,34px);align-items:start}
+.qs{display:grid;gap:0}
+.qrow{display:grid;grid-template-columns:34px minmax(0,1fr);gap:12px;padding-block:14px;border-bottom:1.5px dashed var(--line)}
+.qrow:first-child{padding-top:0}
+.qn{width:30px;height:30px;border-radius:50%;background:var(--peri);display:grid;place-items:center;font-family:var(--display);font-weight:700;font-size:14px}
+.qrow b{display:block;font-size:16px;margin-bottom:8px;line-height:1.3}
+.qrow b small{font-weight:700;color:var(--muted);font-size:13px}
+.opts{display:flex;flex-wrap:wrap;gap:7px}
+.opt{border:1.5px solid var(--line);background:var(--bg);color:var(--ink);border-radius:999px;padding:8px 14px;font-weight:700;font-size:14px;cursor:pointer}
+.opt[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.contact{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:4px}
+@media (max-width:640px){.contact{grid-template-columns:1fr}}
+.consent{display:flex;gap:10px;align-items:flex-start;font-size:13px;line-height:1.45;color:var(--muted);margin-top:10px}
+.consent input{width:18px;height:18px;flex:none;margin-top:1px;accent-color:var(--accent)}
+.msg-wrap{position:sticky;top:90px;display:grid;gap:10px}
+.msg-head{display:flex;align-items:center;gap:10px;font-size:13px;font-weight:800;color:var(--muted)}
+.msg-head .av{width:34px;height:34px;border-radius:50%;background:var(--peri);display:grid;place-items:center;font-family:var(--display);font-weight:700;color:var(--surface);font-size:16px;padding-bottom:2px}
+.msg{background:var(--peri-soft);border-radius:22px 22px 22px 6px;padding:18px 18px 14px;display:grid;gap:8px;font-size:15px}
+.msg .t{font-family:var(--display);font-weight:700;font-size:16px}
+.msg dl{margin:0;display:grid;grid-template-columns:auto minmax(0,1fr);gap:6px 12px}
+.msg dt{color:var(--muted);font-weight:700;font-size:14px}
+.msg dd{margin:0;font-weight:800;font-size:14.5px}
+.msg dd.empty{color:var(--muted);font-weight:600}
+.msg .time{justify-self:end;font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums}
+.ex{display:grid;grid-template-columns:76px minmax(0,1fr);gap:12px;align-items:center;background:var(--bg);border-radius:18px;padding:8px}
+.ex img{width:76px;height:96px;object-fit:cover;border-radius:12px}
+.ex span{font-size:13.5px;color:var(--muted);font-weight:600}
+.ex b{color:var(--ink)}
+@media (max-width:900px){.corp-grid{grid-template-columns:1fr}.msg-wrap{position:static}}
+
+/* что дальше */
+.next-in{background:var(--accent);color:var(--on-accent);border-radius:34px;padding:clamp(24px,4vw,44px);display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.6fr);gap:28px;align-items:center}
+.next-in .eyebrow{color:color-mix(in srgb,var(--on-accent) 75%,transparent)}
+.steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;counter-reset:s}
+.steps div{border-top:1.5px dashed color-mix(in srgb,var(--on-accent) 50%,transparent);padding-top:14px;display:grid;gap:6px}
+.steps div::before{counter-increment:s;content:counter(s);font-family:var(--display);font-weight:700;font-size:28px;line-height:1}
+.steps b{font-size:16px;line-height:1.3}
+.steps span{font-size:14px;opacity:.85}
+@media (max-width:860px){.next-in{grid-template-columns:1fr}}
+@media (max-width:600px){.steps{grid-template-columns:1fr}}
+
+footer{padding-block:36px 44px;font-size:14px;color:var(--muted)}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px}
+.flinks{display:flex;flex-wrap:wrap;gap:6px 18px}
+.sign{display:inline-flex;align-items:center;gap:10px;flex-wrap:wrap}
+.sign b{font-family:var(--display);font-weight:700;letter-spacing:.08em;color:var(--ink)}
+.socials{display:flex;gap:8px}
+.socials a{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:var(--surface);border:1px solid var(--line);color:var(--ink);transition:transform .2s}
+.socials a:hover{transform:translateY(-2px)}
+.socials svg{width:17px;height:17px}
+
+/* шторка */
+.modal{position:fixed;inset:0;z-index:50;background:rgb(18 20 34 / .5);display:flex;justify-content:flex-end}
+.sheet{background:var(--surface);color:var(--ink);width:min(480px,100%);height:100%;overflow:auto;padding:calc(30px + env(safe-area-inset-top,0px)) max(24px,env(safe-area-inset-right,0px)) calc(30px + env(safe-area-inset-bottom,0px)) 24px;position:relative;animation:slide .3s ease}
+@keyframes slide{from{transform:translateX(30px);opacity:.4}}
+.sheet h3{font-size:24px;margin-bottom:10px;padding-right:40px}
+.sheet h4{font-size:15px;margin:18px 0 6px}
+.sheet p,.sheet li{font-size:14.5px;color:var(--muted);margin:0 0 8px}
+.sheet ul{padding-left:18px;margin:0}
+.sheet .msg{margin:14px 0}
+.sheet .row{display:flex;gap:8px;flex-wrap:wrap;margin-top:6px}
+.close{position:absolute;top:calc(16px + env(safe-area-inset-top,0px));right:max(16px,env(safe-area-inset-right,0px));width:38px;height:38px;border-radius:50%;border:1.5px solid var(--line);background:var(--bg);color:var(--ink);font-size:20px;cursor:pointer}
+.toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:12px 20px;border-radius:999px;font-weight:800;font-size:14px;z-index:60;max-width:calc(100% - 32px);text-align:center}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+
+
+<div class="topline"><div class="wrap"><span>При заказе от 5&nbsp;000&nbsp;₽ стикер-пак в&nbsp;подарок</span><span>Шьём по&nbsp;вашим размерам</span></div></div>
+<header>
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="Адая"><span class="mark" aria-hidden="true">a.</span>adaya</a>
+    <nav><a href="#s-katalog">Каталог</a><a href="#pick">По размеру</a><a href="#s-korp">Компаниям</a><a href="#s-otzyvy">Отзывы</a></nav>
+    <a class="btn sm accent" href="https://t.me/adayabrand" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-tg"/></svg>Заказать</a>
+  </div>
+</header>
+
+<main id="top">
+<p class="wrap draftnote"><b>Набросок для Адаи.</b> Тексты и&nbsp;фото из&nbsp;вашего Instagram, цены и&nbsp;сроки уточняются, формы ничего не&nbsp;отправляют.</p>
+
+<section class="wrap hero" style="padding-block:14px 10px">
+  <div class="t-main">
+    <div class="tagrow"><span class="chip">Ручная работа</span><span class="chip">Екатеринбург</span><span class="chip">Есть в&nbsp;Золотом яблоке</span></div>
+    <div>
+      <h1>Папка для ноутбука, сшитая <span class="seam">по&nbsp;его размеру</span></h1>
+      <div class="tape" aria-hidden="true"><span>MacBook Air 13″</span><b>30,41 см</b></div>
+      <p class="sub">И&nbsp;косметички к&nbsp;ней в&nbsp;пару. Вышьем имя, инициалы, болид из&nbsp;Баку или гранат из&nbsp;Стамбула.</p>
+      <div class="cta"><a class="btn" href="#pick">Подобрать по&nbsp;размеру</a><a class="btn ghost" href="#s-korp">Подарки для команды</a></div>
+    </div>
+    <div class="facts">
+      <div><b>По&nbsp;размеру</b><span>каждая папка под вашу модель ноутбука</span></div>
+      <div><b>Золотое яблоко</b><span>наши новинки уже на&nbsp;полках</span></div>
+      <div><b>от 5&nbsp;000&nbsp;₽</b><span>стикер-пак в&nbsp;подарок к&nbsp;заказу</span></div>
+    </div>
+  </div>
+
+  <div class="t-photo" aria-live="polite">
+    <img id="ph" src="img/baku.jpg" alt="">
+    <span class="size" id="p-size"></span>
+    <div class="thumbs" id="thumbs" role="group" aria-label="Изделия"></div>
+    <div class="panel">
+      <div class="info"><span class="coll" id="p-coll"></span><span class="name" id="p-name"></span><span class="spec" id="p-spec"></span></div>
+      <button type="button" class="btn sm accent" id="p-want">Хочу такую</button>
+    </div>
+  </div>
+
+  <form class="pick" id="pick" onsubmit="return false">
+    <div class="lbl">Подбор по&nbsp;размеру<small>ответ сразу, без переписки</small></div>
+    <label class="field" for="f-item"><span>Что шьём</span><select id="f-item"><option>Папка-конверт</option><option>Папка на&nbsp;молнии</option><option>Косметичка</option><option>Пенал</option></select></label>
+    <label class="field" for="f-laptop"><span>Ноутбук</span><select id="f-laptop"></select></label>
+    <label class="field" for="f-color"><span>Цвет</span><select id="f-color"><option>Сливочный</option><option>Голубой</option><option selected>Жёлтый</option><option>Розовый</option><option>Бежевый</option><option>Бордовый</option><option>Чёрный</option></select></label>
+    <label class="field" for="f-emb"><span>Вышивка</span><select id="f-emb"><option>Без вышивки</option><option selected>Имя или инициалы</option><option>Сюжет из&nbsp;коллекции</option></select></label>
+    <button type="button" class="btn accent" id="go">Собрать заявку</button>
+    <div class="own" id="own" hidden><span>Размер ноутбука, см:</span><input id="f-w" type="text" inputmode="decimal" placeholder="ширина" aria-label="Ширина, см"><input id="f-h" type="text" inputmode="decimal" placeholder="высота" aria-label="Высота, см"><input id="f-d" type="text" inputmode="decimal" placeholder="толщина" aria-label="Толщина, см"></div>
+  </form>
+</section>
+
+<section class="s-head" id="structure">
+  <div class="wrap">
+    <div class="eyebrow">Структура сайта</div>
+    <h2 style="margin-top:8px">Что будет на&nbsp;сайте Адаи</h2>
+    <p class="lead">12 блоков на&nbsp;одной странице. Каждый отвечает на&nbsp;вопрос, который сейчас пишут вам в&nbsp;директ: «а&nbsp;на&nbsp;мой Air&nbsp;15 подойдёт?», «сколько стоит?», «успеете к&nbsp;Новому году?»</p>
+    <div class="flow">
+      <div><b>Видит рилс</b><span>F1, Стамбул, «извинитесь, вы до&nbsp;сих пор без чехла?!»</span></div>
+      <div><b>Переходит по&nbsp;ссылке в&nbsp;шапке</b><span>на&nbsp;сайт, а&nbsp;не&nbsp;в&nbsp;ленту из&nbsp;356 публикаций</span></div>
+      <div><b>Выбирает модель, ноутбук, цвет и&nbsp;вышивку</b><span>за&nbsp;минуту, сам</span></div>
+      <div><b>Вам приходит готовая заявка</b><span>с&nbsp;размерами и&nbsp;текстом вышивки</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap blocks">
+
+<article class="blk" id="s-glavnyi">
+  <div class="wf" style="grid-template-columns:1fr 1fr;grid-template-rows:1fr auto">
+    <div class="peri" style="padding:10px;display:grid;gap:6px;align-content:end"><span class="ln" style="width:90%;height:9px;background:var(--ink)"></span><span class="ln" style="width:70%;height:9px;background:var(--ink)"></span><span style="display:block;width:62%;height:9px;border-radius:2px;background:var(--tape);transform:rotate(-2deg)"></span><span class="pl" style="width:60%;height:16px;background:var(--ink);border-color:var(--ink);margin-top:4px"></span></div>
+    <div class="ph" style="background-image:url(img/baku.jpg);position:relative"><span class="pl" style="position:absolute;left:6px;right:6px;bottom:6px;height:22px"></span></div>
+    <div style="grid-column:1/-1;background:var(--surface);border-radius:10px;padding:5px;display:grid;grid-template-columns:repeat(4,1fr) .8fr;gap:5px"><span class="pl"></span><span class="pl"></span><span class="pl"></span><span class="pl"></span><span class="pl a"></span></div>
+  </div>
+  <div class="txt"><span class="no">01</span><h3>Главный экран</h3><p class="why">За&nbsp;3&nbsp;секунды понятно: что вы шьёте, что по&nbsp;размеру и&nbsp;как заказать</p><ul><li>Ваши изделия на&nbsp;фото</li><li>«Есть в&nbsp;Золотом яблоке»</li><li>Стикер-пак от&nbsp;5&nbsp;000&nbsp;₽</li><li>Строка подбора</li></ul></div>
+</article>
+
+<article class="blk" id="s-razmer">
+  <div class="wf" style="grid-template-columns:1.15fr 1fr;align-items:center">
+    <svg viewBox="0 0 180 120" style="width:100%;height:auto" aria-hidden="true">
+      <rect x="24" y="22" width="132" height="84" rx="8" fill="var(--surface)" stroke="var(--line)" stroke-width="2"/>
+      <rect x="34" y="31" width="112" height="66" rx="3" fill="var(--peri-soft)"/>
+      <path d="M24 12h132M24 8v8M156 8v8" stroke="var(--accent)" stroke-width="2" fill="none"/>
+      <path d="M168 22v84M164 22h8M164 106h8" stroke="var(--accent)" stroke-width="2" fill="none"/>
+      <rect x="66" y="3" width="48" height="14" rx="7" fill="var(--accent)"/><text x="90" y="13.5" text-anchor="middle" font-size="9" font-weight="800" fill="var(--on-accent)" font-family="Nunito,sans-serif">30,41 см</text>
+      <rect x="2" y="0" width="0" height="0" fill="none"/>
+    </svg>
+    <div style="display:grid;gap:6px;align-content:center"><span class="tiny">Ноутбук</span><span class="pl a"></span><span class="tiny">Форма</span><div style="display:flex;gap:4px"><span class="pl" style="flex:1"></span><span class="pl" style="flex:1"></span></div><span class="tiny">Цвет</span><div style="display:flex;gap:5px"><i style="width:16px;height:16px;border-radius:50%;background:#F1EEE6;border:1px solid var(--line)"></i><i style="width:16px;height:16px;border-radius:50%;background:#F2D85B"></i><i style="width:16px;height:16px;border-radius:50%;background:#B9CBEB"></i><i style="width:16px;height:16px;border-radius:50%;background:#F0B9C8"></i><i style="width:16px;height:16px;border-radius:50%;background:#7B1E2B"></i></div></div>
+  </div>
+  <div class="txt"><span class="no">02</span><h3>Подбор по&nbsp;размеру ноутбука</h3><p class="why">Вместо вопроса «а&nbsp;на&nbsp;мой Air&nbsp;15 подойдёт?» человек сразу видит свой размер</p><ul><li>Модель или свои замеры</li><li>Конверт или на&nbsp;молнии</li><li>Цвет и&nbsp;стёжка</li><li>Текст вышивки</li><li>Заявка в&nbsp;Telegram</li></ul></div>
+</article>
+
+<article class="blk" id="s-katalog">
+  <div class="wf" style="grid-template-rows:auto 1fr">
+    <div style="display:flex;gap:5px"><span class="pl a" style="width:22%"></span><span class="pl" style="width:22%"></span><span class="pl" style="width:22%"></span><span class="pl" style="width:18%"></span></div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:5px;align-content:start">
+      <div class="wcard"><div class="ph" style="background-image:url(img/granat.jpg)"></div><span class="ln" style="width:80%"></span><span class="ln a" style="width:45%"></span></div>
+      <div class="wcard"><div class="ph" style="background-image:url(img/simit.jpg)"></div><span class="ln" style="width:70%"></span><span class="ln a" style="width:45%"></span></div>
+      <div class="wcard"><div class="ph" style="background-image:url(img/mama.jpg)"></div><span class="ln" style="width:85%"></span><span class="ln a" style="width:45%"></span></div>
+      <div class="wcard"><div class="ph" style="background-image:url(img/polosy.jpg)"></div><span class="ln" style="width:65%"></span><span class="ln a" style="width:45%"></span></div>
+    </div>
+  </div>
+  <div class="txt"><span class="no">03</span><h3>Каталог</h3><p class="why">Все модели с&nbsp;ценами в&nbsp;одном месте, без листания 356&nbsp;публикаций</p><ul><li>Папки для ноутбука</li><li>Косметички</li><li>Пеналы</li><li>Сумки-чехлы</li><li>Цена и&nbsp;размеры в&nbsp;карточке</li></ul></div>
+</article>
+
+<article class="blk" id="s-kollekcii">
+  <div class="wf" style="grid-template-columns:repeat(3,1fr)">
+    <div class="wcard" style="padding:5px"><div class="ph" style="background-image:url(img/red.jpg);aspect-ratio:3/4"></div><span class="tiny" style="padding:2px 3px">F1</span></div>
+    <div class="wcard" style="padding:5px"><div class="ph" style="background-image:url(img/granat.jpg);aspect-ratio:3/4"></div><span class="tiny" style="padding:2px 3px">Стамбул</span></div>
+    <div class="wcard" style="padding:5px"><div class="ph" style="background-image:url(img/mama.jpg);aspect-ratio:3/4"></div><span class="tiny" style="padding:2px 3px">День матери</span></div>
+  </div>
+  <div class="txt"><span class="no">04</span><h3>Коллекции с&nbsp;вышивкой</h3><p class="why">То, за&nbsp;что вас репостят, живёт на&nbsp;сайте, а&nbsp;не&nbsp;уходит вниз ленты</p><ul><li>F1: Баку и&nbsp;болиды</li><li>Welcome to Istanbul</li><li>День матери</li><li>Собираемся на&nbsp;учёбу</li><li>Своя вышивка на&nbsp;заказ</li></ul></div>
+</article>
+</div>
+
+<div class="wrap" style="padding-bottom:14px">
+<article class="corp" id="s-korp">
+  <div class="corp-top">
+    <div><span class="no">05</span><span class="eyebrow" style="margin-left:10px">Корпоративные заказы</span><h3>Подарки команде с&nbsp;логотипом за&nbsp;5&nbsp;вопросов</h3><p>Компания отвечает на&nbsp;пять вопросов, а&nbsp;вам приходит готовый запрос: изделия, тираж, оформление, цвета и&nbsp;дата. Попробуйте, всё нажимается.</p></div>
+    <span class="live">Работает в&nbsp;наброске</span>
+  </div>
+  <div class="corp-grid">
+    <form class="qs" id="corpform">
+      <div class="qrow"><span class="qn">1</span><div><b>Что дарим? <small>можно несколько</small></b><div class="opts" data-q="what" data-multi="1"><button type="button" class="opt" aria-pressed="true">Косметички</button><button type="button" class="opt" aria-pressed="false">Папки для ноутбука</button><button type="button" class="opt" aria-pressed="false">Пеналы</button><button type="button" class="opt" aria-pressed="false">Набор: папка + косметичка</button></div></div></div>
+      <div class="qrow"><span class="qn">2</span><div><b>Сколько человек в&nbsp;команде?</b><div class="opts" data-q="qty"><button type="button" class="opt" aria-pressed="false">до 20</button><button type="button" class="opt" aria-pressed="true">20–50</button><button type="button" class="opt" aria-pressed="false">50–100</button><button type="button" class="opt" aria-pressed="false">больше 100</button></div></div></div>
+      <div class="qrow"><span class="qn">3</span><div><b>Как оформить?</b><div class="opts" data-q="brand"><button type="button" class="opt" aria-pressed="false">Логотип вышивкой</button><button type="button" class="opt" aria-pressed="true">Логотип и&nbsp;имя каждого</button><button type="button" class="opt" aria-pressed="false">Только имена</button><button type="button" class="opt" aria-pressed="false">Без нанесения</button></div></div></div>
+      <div class="qrow"><span class="qn">4</span><div><b>Какие цвета?</b><div class="opts" data-q="color"><button type="button" class="opt" aria-pressed="true">Фирменные цвета компании</button><button type="button" class="opt" aria-pressed="false">Из&nbsp;коллекций Адаи</button><button type="button" class="opt" aria-pressed="false">Каждый выбирает сам</button></div></div></div>
+      <div class="qrow"><span class="qn">5</span><div><b>К&nbsp;какой дате?</b><div class="opts" data-q="date"><button type="button" class="opt" aria-pressed="true">К&nbsp;Новому году</button><button type="button" class="opt" aria-pressed="false">К&nbsp;23 февраля и&nbsp;8 марта</button><button type="button" class="opt" aria-pressed="false">К&nbsp;событию компании</button><button type="button" class="opt" aria-pressed="false">Пока выбираем</button></div></div></div>
+      <div class="qrow" style="border-bottom:0"><span class="qn" style="background:var(--accent);color:var(--on-accent)">✓</span><div><b>Куда ответить?</b>
+        <div class="contact"><input id="c-company" type="text" placeholder="Компания" autocomplete="organization" aria-label="Компания"><input id="c-name" type="text" placeholder="Ваше имя" autocomplete="name" aria-label="Ваше имя" required><input id="c-phone" type="tel" placeholder="Телефон или Telegram" aria-label="Телефон или Telegram" required></div>
+        <label class="consent" for="c-consent"><input id="c-consent" type="checkbox" required><span>Я даю <button type="button" class="link" data-doc="soglasie">согласие на&nbsp;обработку персональных данных</button> и&nbsp;принимаю <button type="button" class="link" data-doc="politika">политику конфиденциальности</button></span></label>
+        <div style="margin-top:14px"><button type="submit" class="btn accent">Отправить запрос</button></div>
+      </div></div>
+    </form>
+    <div class="msg-wrap" aria-live="polite">
+      <div class="msg-head"><span class="av" aria-hidden="true">a.</span>Так запрос придёт вам в&nbsp;Telegram</div>
+      <div class="msg" id="corpmsg"></div>
+      <div class="ex"><img src="img/corp.jpg" alt="Корпоративные косметички Адаи с вышитыми именами"><span><b>Пример из&nbsp;вашего закрепа.</b> Косметички в&nbsp;фирменных цветах с&nbsp;именами сотрудников, в&nbsp;крафтовых коробках.</span></div>
+    </div>
+  </div>
+</article>
+</div>
+
+<div class="wrap blocks">
+<article class="blk" id="s-podarok">
+  <div class="wf" style="place-items:center">
+    <div style="width:84%;aspect-ratio:1.75;background:var(--peri);border-radius:14px;position:relative;display:grid;place-items:center;padding:10px;box-shadow:0 10px 24px rgb(30 34 60 / .12)">
+      <span style="position:absolute;inset:7px;border:1.5px dashed rgb(255 255 255 / .8);border-radius:9px"></span>
+      <span style="position:absolute;left:0;right:0;top:44%;height:10px;background:var(--rose)"></span>
+      <span style="position:absolute;top:0;bottom:0;left:22%;width:10px;background:var(--rose)"></span>
+      <div style="position:relative;background:var(--surface);border-radius:10px;padding:8px 14px;text-align:center;display:grid;gap:2px"><span style="font-family:var(--display);font-weight:700;font-size:15px">a.</span><span style="font-family:var(--display);font-weight:700;font-size:12px;line-height:1.2;color:var(--thread)">папка по&nbsp;размеру</span><span class="tiny">сертификат</span></div>
+    </div>
+  </div>
+  <div class="txt"><span class="no">06</span><h3>Подарок к&nbsp;Новому году</h3><p class="why">Сертификат на&nbsp;папку по&nbsp;размеру: дарят, даже не&nbsp;зная модель ноутбука</p><ul><li>Сертификат в&nbsp;коробке</li><li>Получатель сам выбирает цвет и&nbsp;вышивку</li><li>Последний день заказа к&nbsp;31 декабря</li></ul></div>
+</article>
+
+<article class="blk" id="s-pomestitsya">
+  <div class="wf" style="padding:0;background:#FBFAF7"><div class="ph" style="background-image:url(img/ucheba.jpg);background-size:contain;border-radius:0"></div></div>
+  <div class="txt"><span class="no">07</span><h3>Что поместится в&nbsp;папку</h3><p class="why">Ваш пост «собираемся на&nbsp;учёбу» становится блоком, который снимает сомнение «а&nbsp;влезет ли зарядка?»</p><ul><li>Ноутбук</li><li>Наушники и&nbsp;зарядка</li><li>Блокнот</li><li>Телефон</li><li>Пенал с&nbsp;инициалами</li></ul></div>
+</article>
+
+<article class="blk" id="s-otzyvy">
+  <div class="wf" style="grid-template-columns:repeat(4,1fr);align-items:center;gap:6px">
+    <div style="display:grid;gap:5px;grid-column:span 2"><span style="justify-self:start;width:88%;height:26px;border-radius:12px 12px 12px 4px;background:var(--surface)"></span><span style="justify-self:end;width:70%;height:20px;border-radius:12px 12px 4px 12px;background:var(--peri)"></span><span style="justify-self:start;width:80%;height:32px;border-radius:12px 12px 12px 4px;background:var(--surface)"></span></div>
+    <i style="aspect-ratio:9/16;background:url(img/bukle.jpg) center/cover"></i>
+    <i style="aspect-ratio:9/16;background:url(img/beige.jpg) center/cover"></i>
+    <span style="grid-column:1/-1;font-size:12px;letter-spacing:2px;color:var(--thread);text-align:center">★★★★★</span>
+  </div>
+  <div class="txt"><span class="no">08</span><h3>Отзывы</h3><p class="why">Хайлайтс «Отзывы ✨» работают на&nbsp;сайте, их&nbsp;видят до&nbsp;первого сообщения</p><ul><li>Скриншоты из&nbsp;директа</li><li>Фото покупательниц</li><li>Отзывы компаний</li></ul></div>
+</article>
+
+<article class="blk" id="s-uhod">
+  <div class="wf" style="grid-template-columns:repeat(3,1fr);align-items:center">
+    <div class="wcard" style="padding:8px;gap:6px;justify-items:center"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="var(--accent)" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M3 7h18l-2 12H5z"/><path d="M6 11c2 1.5 4-1.5 6 0s4-1.5 6 0"/></svg><span class="ln" style="width:80%"></span><span class="ln" style="width:55%"></span></div>
+    <div class="wcard" style="padding:8px;gap:6px;justify-items:center"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="var(--accent)" stroke-width="1.8" aria-hidden="true"><path d="M4 4h16v16H4z"/><path d="M4 4l16 16M20 4 4 20" stroke-dasharray="2 2"/></svg><span class="ln" style="width:80%"></span><span class="ln" style="width:55%"></span></div>
+    <div class="wcard" style="padding:8px;gap:6px;justify-items:center"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="var(--accent)" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M5 9h14M7 9V6a5 5 0 0 1 10 0v3M6 9v11h12V9"/></svg><span class="ln" style="width:80%"></span><span class="ln" style="width:55%"></span></div>
+  </div>
+  <div class="txt"><span class="no">09</span><h3>Уход и&nbsp;ткани</h3><p class="why">Хайлайтс «Уход» на&nbsp;одной странице: как чистить и&nbsp;из&nbsp;чего шьёте</p><ul><li>Как стирать и&nbsp;чистить</li><li>Ткани и&nbsp;стёжка</li><li>Молнии и&nbsp;фурнитура</li></ul></div>
+</article>
+
+<article class="blk" id="s-dostavka">
+  <div class="wf" style="grid-template-columns:1.4fr 1fr;align-items:center">
+    <svg viewBox="0 0 160 70" style="width:100%;height:auto" aria-hidden="true"><path d="M12 54C46 52 58 16 98 18s42 28 50 22" fill="none" stroke="var(--muted)" stroke-width="2" stroke-dasharray="4 5"/><circle cx="12" cy="54" r="7" fill="var(--accent)"/><circle cx="148" cy="40" r="7" fill="var(--ink)"/><text x="12" y="38" text-anchor="middle" font-size="9" font-weight="800" fill="var(--muted)" font-family="Nunito,sans-serif">ЕКБ</text></svg>
+    <div style="background:var(--surface);border-radius:12px;padding:8px;display:grid;justify-items:center;gap:2px"><span style="width:100%;height:8px;border-radius:4px;background:var(--accent)"></span><b style="font-family:var(--display);font-size:20px;line-height:1.2">?</b><span class="tiny">дней пошив</span></div>
+  </div>
+  <div class="txt"><span class="no">10</span><h3>Сроки, доставка и&nbsp;оплата</h3><p class="why">Ответ на&nbsp;«сколько шьёте и&nbsp;сколько ехать до&nbsp;Москвы?» без переписки</p><ul><li>Срок пошива по&nbsp;размеру</li><li>Доставка по&nbsp;России</li><li>Самовывоз в&nbsp;Екатеринбурге</li><li>Безнал и&nbsp;договор для компаний</li></ul></div>
+</article>
+
+<article class="blk" id="s-voprosy">
+  <div class="wf" style="align-content:center;gap:6px;padding:14px">
+    <div style="background:var(--surface);border-radius:10px;padding:8px 10px;display:flex;justify-content:space-between;align-items:center"><span class="ln" style="width:60%"></span><b style="color:var(--accent)">+</b></div>
+    <div style="background:var(--surface);border-radius:10px;padding:8px 10px;display:grid;gap:5px"><div style="display:flex;justify-content:space-between;align-items:center"><span class="ln" style="width:70%;background:var(--ink)"></span><b style="color:var(--accent)">×</b></div><span class="ln" style="width:90%"></span><span class="ln" style="width:65%"></span></div>
+    <div style="background:var(--surface);border-radius:10px;padding:8px 10px;display:flex;justify-content:space-between;align-items:center"><span class="ln" style="width:50%"></span><b style="color:var(--accent)">+</b></div>
+  </div>
+  <div class="txt"><span class="no">11</span><h3>Вопросы</h3><p class="why">То, что спрашивают в&nbsp;директ каждый день, отвечено один раз</p><ul><li>Как измерить ноутбук</li><li>Можно ли свою вышивку</li><li>Сколько ждать</li><li>Где купить в&nbsp;Золотом яблоке</li></ul></div>
+</article>
+
+<article class="blk" id="s-kontakty">
+  <div class="wf" style="grid-template-columns:1fr 1fr;align-items:center">
+    <div style="display:grid;gap:6px"><span class="pl"></span><span class="pl"></span><div style="display:flex;gap:5px;align-items:center"><i style="width:12px;height:12px;border-radius:3px;background:var(--accent)"></i><span class="ln" style="flex:1"></span></div><span class="pl a"></span></div>
+    <div style="display:flex;gap:8px;justify-content:center">
+      <span style="width:36px;height:36px;border-radius:50%;background:var(--surface);display:grid;place-items:center;color:var(--ink)"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><use href="#i-tg"/></svg></span>
+      <span style="width:36px;height:36px;border-radius:50%;background:var(--surface);display:grid;place-items:center;color:var(--ink)"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><use href="#i-ig"/></svg></span>
+      <span style="width:36px;height:36px;border-radius:50%;background:var(--surface);display:grid;place-items:center;color:var(--ink)"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><use href="#i-th"/></svg></span>
+    </div>
+  </div>
+  <div class="txt"><span class="no">12</span><h3>Контакты и&nbsp;заявка</h3><p class="why">Telegram, Instagram и&nbsp;Threads иконками, короткая форма с&nbsp;согласием на&nbsp;обработку данных</p><ul><li>Написать в&nbsp;Telegram</li><li>Instagram и&nbsp;Threads</li><li>Политика и&nbsp;согласие</li></ul></div>
+</article>
+</div>
+
+<section class="wrap" style="padding-block:30px 10px">
+  <div class="next-in">
+    <div><div class="eyebrow">Что дальше</div><h2 style="margin-top:8px">Три шага до&nbsp;сайта</h2></div>
+    <div class="steps">
+      <div><b>Утверждаем структуру</b><span>Вы смотрите и&nbsp;говорите, какие блоки убрать или добавить</span></div>
+      <div><b>Собираем материалы</b><span>Цены, сроки пошива, условия для компаний и&nbsp;доставки</span></div>
+      <div><b>Сайт готов за&nbsp;7–10&nbsp;дней</b><span>Ссылка встаёт в&nbsp;шапку Instagram рядом с&nbsp;Telegram</span></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span class="flinks"><span>Подготовила Анастасия Абдуллаева</span><button type="button" class="link" data-doc="politika">Политика</button><button type="button" class="link" data-doc="soglasie">Согласие на&nbsp;обработку данных</button></span>
+    <span class="sign"><span><b>FOR.MI</b> designed &amp; developed by ABN</span><span class="socials" id="dev-socials"></span></span>
+  </div>
+</footer>
+
+<div class="modal" id="modal" hidden role="dialog" aria-modal="true" aria-label="Окно">
+  <div class="sheet">
+    <button type="button" class="close" id="close" aria-label="Закрыть">×</button>
+    <div id="sheet"></div>
+  </div>
+</div>
+<div class="toast" id="toast" hidden></div>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-tg" viewBox="0 0 24 24"><path fill="currentColor" d="M21.4 4.3 2.9 11.5c-1.3.5-1.2 1.2-.2 1.5l4.7 1.5 1.8 5.5c.2.6.4.8.9.8s.6-.2.9-.5l2.3-2.2 4.8 3.5c.9.5 1.5.2 1.7-.8L22.8 5.8c.3-1.3-.4-1.9-1.4-1.5zM8.6 14.1l9.6-6c.5-.3.9-.1.5.2l-7.8 7.1-.3 3.3-2-4.6z"/></symbol>
+  <symbol id="i-ig" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/></g><circle cx="17.2" cy="6.8" r="1.2" fill="currentColor"/></symbol>
+  <symbol id="i-th" viewBox="0 0 24 24"><path fill="currentColor" d="M16.6 11.2c-.2-2.5-1.7-3.9-4.1-3.9-1.6 0-2.9.7-3.6 1.9l1.3.9c.5-.8 1.3-1.1 2.3-1.1 1.3 0 2.1.7 2.3 1.9-.7-.1-1.4-.2-2.2-.1-2.2.1-3.6 1.4-3.5 3.2.1 1.8 1.7 2.8 3.6 2.7 2.4-.1 3.6-1.9 3.8-4.2.6.4 1 .9 1.2 1.6.4 1.1.3 2.9-1.1 4.3-1.2 1.2-2.7 1.7-4.9 1.7-2.4 0-4.3-.8-5.5-2.3-1.1-1.4-1.7-3.3-1.7-5.7s.6-4.3 1.8-5.7C8.3 4.8 10.1 4 12.5 4c2.5 0 4.3.8 5.6 2.3.6.7 1.1 1.7 1.4 2.8l1.5-.4c-.4-1.4-.9-2.5-1.7-3.5-1.6-1.8-3.9-2.8-6.8-2.8-2.9 0-5.1 1-6.6 2.9C4.5 7 3.8 9.3 3.8 12s.7 5 2.1 6.7c1.5 1.9 3.7 2.9 6.6 2.9 2.6 0 4.5-.7 6-2.1 1.9-1.9 2-4.4 1.4-5.9-.5-1.2-1.5-2-3.3-2.4zm-4.2 4c-1.1.1-2-.4-2.1-1.2 0-.8.6-1.6 2.2-1.7.6 0 1.2 0 1.9.2-.2 1.9-1 2.6-2 2.7z"/></symbol>
+</svg>
+
+<script>
+/* ===== ДАННЫЕ КЛИЕНТА: всё из Instagram @adaya.brand (скриншоты 31.10.2026). Цены, сроки и реквизиты уточняются ===== */
+const SHOP={
+  name:"Адая",
+  tg:"https://t.me/adayabrand",
+  direct:"https://ig.me/m/adaya.brand",
+  socials:[["telegram","https://t.me/adayabrand"],["instagram","https://instagram.com/adaya.brand"],["threads","https://www.threads.net/@adaya.brand"]],
+  owner:{name:"[ИП / название, уточнить]",inn:"[уточнить]",address:"г. Екатеринбург, [адрес уточнить]",email:"[почта, уточнить]",site:"[адрес сайта]"}
+};
+/* изделия из постов: названия описательные, как называете модели — уточнить */
+const ITEMS=[
+  {img:"img/baku.jpg",coll:"Коллекция F1",name:"Папка-конверт с вышивкой BAKU",spec:"Стёжка полосами, розовый болид",size:"по размеру ноутбука",alt:"Белая стёганая папка-конверт для ноутбука с вышивкой BAKU и розовым болидом"},
+  {img:"img/granat.jpg",coll:"Welcome to Istanbul",name:"Косметичка с вышивкой граната",spec:"Бордовая, стёжка ромбом",size:"косметичка",alt:"Бордовая стёганая косметичка с вышитыми гранатами"},
+  {img:"img/simit.jpg",coll:"Welcome to Istanbul",name:"Косметичка в клетку с симитом",spec:"Красная клетка, вышитый бублик-симит",size:"косметичка",alt:"Косметичка в красно-белую клетку с вышитым турецким бубликом"},
+  {img:"img/mama.jpg",coll:"День матери",name:"Папка на молнии «С днём мам»",spec:"Бежевая, гусыня с гусёнком",size:"по размеру ноутбука",alt:"Бежевая стёганая папка на молнии с вышивкой гусыни и надписью «с днём мам»"}
+];
+/* размеры ноутбуков: ширина × глубина × толщина, см (данные производителя) */
+const LAPTOPS=[
+  ["MacBook Air 13″","30,41 × 21,5 × 1,13"],
+  ["MacBook Air 15″","34,04 × 23,76 × 1,15"],
+  ["MacBook Pro 14″","31,26 × 22,12 × 1,55"],
+  ["MacBook Pro 16″","35,57 × 24,81 × 1,68"],
+  ["Другой ноутбук",""]
+];
+const DEV_SOCIALS=[["telegram","https://t.me/abanev_dev"]];
+
+const $=s=>document.querySelector(s);
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+
+/* фото-переключатель */
+ITEMS.forEach(m=>{const i=new Image();i.src=m.img});
+let cur=0;
+function show(k){
+  cur=(k+ITEMS.length)%ITEMS.length;const m=ITEMS[cur],ph=$("#ph");
+  ph.classList.add("fade");
+  setTimeout(()=>{ph.src=m.img;ph.alt=m.alt;ph.classList.remove("fade")},180);
+  $("#p-coll").textContent=m.coll;
+  $("#p-name").textContent=m.name;$("#p-spec").textContent=m.spec;$("#p-size").textContent=m.size;
+  $("#thumbs").querySelectorAll("button").forEach((b,i)=>b.setAttribute("aria-pressed",String(i===cur)));
+}
+$("#thumbs").innerHTML=ITEMS.map((m,i)=>`<button type="button" data-i="${i}" aria-label="${esc(m.name)}" aria-pressed="false"><img src="${m.img}" alt=""></button>`).join("");
+$("#thumbs").addEventListener("click",e=>{const b=e.target.closest("[data-i]");if(b&&+b.dataset.i!==cur)show(+b.dataset.i)});
+$("#ph").alt=ITEMS[0].alt;show(0);
+
+/* подбор по размеру */
+$("#f-laptop").innerHTML=LAPTOPS.map(([n,s])=>`<option value="${esc(n)}">${esc(n)}</option>`).join("");
+function syncPick(){
+  const item=$("#f-item").value,isCase=/Папка/.test(item);
+  $("#f-laptop").disabled=!isCase;
+  $("#own").hidden=!(isCase&&$("#f-laptop").value==="Другой ноутбук");
+}
+["#f-item","#f-laptop"].forEach(s=>$(s).addEventListener("change",syncPick));syncPick();
+
+function sheetMsg(lines,title){
+  return `<div class="msg"><span class="t">${esc(title)}</span><dl>${lines.map(([k,v])=>`<dt>${esc(k)}</dt><dd>${esc(v)}</dd>`).join("")}</dl><span class="time">${new Date().toLocaleTimeString("ru-RU",{hour:"2-digit",minute:"2-digit"})}</span></div>`;
+}
+function pickRequest(extra){
+  const item=$("#f-item").value,isCase=/Папка/.test(item),lap=$("#f-laptop").value;
+  const lines=[["Изделие",extra?extra.name:item]];
+  if(extra){lines.push(["Коллекция",extra.coll])}
+  if(isCase&&!extra){
+    if(lap==="Другой ноутбук"){const w=$("#f-w").value.trim(),h=$("#f-h").value.trim(),d=$("#f-d").value.trim();lines.push(["Размер, см",(w&&h)?`${w} × ${h}${d?" × "+d:""}`:"пришлю замеры"])}
+    else{lines.push(["Ноутбук",lap]);lines.push(["Размер, см",LAPTOPS.find(l=>l[0]===lap)[1]])}
+  }
+  if(!extra){lines.push(["Цвет",$("#f-color").value]);lines.push(["Вышивка",$("#f-emb").value])}
+  return lines;
+}
+function openRequest(extra){
+  const lines=pickRequest(extra);
+  const text="Здравствуйте! Хочу заказать:\n"+lines.map(([k,v])=>k+": "+v).join("\n");
+  openSheet(`<h3>Заявка готова</h3><p>Так она придёт вам в&nbsp;Telegram или директ. Покупателю не&nbsp;нужно объяснять размеры и&nbsp;цвет в&nbsp;переписке.</p>${sheetMsg(lines,"Новая заявка с сайта")}
+  <div class="row"><button type="button" class="btn accent sm" id="copy">Скопировать текст</button><a class="btn ghost sm" href="${SHOP.tg}" target="_blank" rel="noopener">Открыть Telegram</a><a class="btn ghost sm" href="${SHOP.direct}" target="_blank" rel="noopener">Открыть директ</a></div>
+  <p style="margin-top:16px;font-size:13px">Это набросок: заявка никуда не&nbsp;отправляется. Цена появится здесь, когда вы её пришлёте.</p>`);
+  $("#copy").onclick=()=>{const done=()=>toast("Текст скопирован");
+    try{navigator.clipboard.writeText(text).then(done,()=>toast("Выделите текст заявки вручную"))}catch(e){toast("Выделите текст заявки вручную")}};
+}
+$("#go").onclick=()=>openRequest();
+$("#p-want").onclick=()=>openRequest(ITEMS[cur]);
+
+/* заявка для компаний */
+const CQ={what:"Что дарим",qty:"Сколько человек",brand:"Оформление",color:"Цвета",date:"К какой дате"};
+function corpLines(){
+  return Object.entries(CQ).map(([k,label])=>{const v=[...document.querySelectorAll(`[data-q="${k}"] .opt[aria-pressed="true"]`)].map(b=>b.textContent).join(", ");return [label,v]});
+}
+function renderCorp(sent){
+  const company=$("#c-company").value.trim(),name=$("#c-name").value.trim(),phone=$("#c-phone").value.trim();
+  const lines=corpLines();
+  $("#corpmsg").innerHTML=`<span class="t">${sent?"Новый запрос от компании":"Черновик запроса"}</span><dl>${company?`<dt>Компания</dt><dd>${esc(company)}</dd>`:""}${lines.map(([k,v])=>`<dt>${esc(k)}</dt><dd class="${v?"":"empty"}">${v?esc(v):"не выбрано"}</dd>`).join("")}<dt>Контакт</dt><dd class="${name||phone?"":"empty"}">${name||phone?esc([name,phone].filter(Boolean).join(", ")):"появится после заполнения"}</dd></dl><span class="time">${sent?"только что":"обновляется по ходу ответов"}</span>`;
+}
+document.querySelectorAll(".opts").forEach(g=>g.addEventListener("click",e=>{
+  const b=e.target.closest(".opt");if(!b)return;
+  if(g.dataset.multi){const on=b.getAttribute("aria-pressed")==="true";const count=g.querySelectorAll('[aria-pressed="true"]').length;if(on&&count===1)return;b.setAttribute("aria-pressed",String(!on))}
+  else g.querySelectorAll(".opt").forEach(x=>x.setAttribute("aria-pressed",String(x===b)));
+  renderCorp();
+}));
+["#c-company","#c-name","#c-phone"].forEach(s=>$(s).addEventListener("input",()=>renderCorp()));
+$("#corpform").addEventListener("submit",e=>{e.preventDefault();renderCorp(true);toast("Готово! В наброске запрос никуда не уходит");});
+renderCorp();
+
+/* общие */
+function toast(t){const el=$("#toast");el.textContent=t;el.hidden=false;clearTimeout(toast.t);toast.t=setTimeout(()=>el.hidden=true,2200)}
+let lastFocus=null;
+function openSheet(h){lastFocus=document.activeElement;$("#sheet").innerHTML=h;$("#modal").hidden=false;$("#close").focus()}
+function closeSheet(){$("#modal").hidden=true;if(lastFocus)lastFocus.focus()}
+document.addEventListener("click",e=>{
+  const d=e.target.closest("[data-doc]");if(d){e.preventDefault();openSheet(DOCS[d.dataset.doc]);return}
+  if(e.target.id==="modal"||e.target.id==="close")closeSheet();
+});
+document.addEventListener("keydown",e=>{if(e.key==="Escape"&&!$("#modal").hidden)closeSheet()});
+
+/* соцсети разработчика */
+const ICONS={telegram:"#i-tg",instagram:"#i-ig",threads:"#i-th"};
+const NAMES={telegram:"Telegram",instagram:"Instagram",threads:"Threads"};
+const socialLinks=l=>l.map(([k,u])=>`<a href="${u}" target="_blank" rel="noopener" aria-label="${NAMES[k]}" title="${NAMES[k]}"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="${ICONS[k]}"/></svg></a>`).join("");
+$("#dev-socials").innerHTML=socialLinks(DEV_SOCIALS);
+
+/* документы по персональным данным (152-ФЗ) */
+const O=SHOP.owner;
+const DOCS={
+politika:`<h3>Политика конфиденциальности</h3><p>Редакция от 31.10.2026</p>
+<h4>1. Кто обрабатывает данные</h4><p>Оператор персональных данных: ${O.name}, ИНН ${O.inn}, адрес: ${O.address}. Политика действует для сайта ${O.site} и составлена по Федеральному закону № 152-ФЗ «О персональных данных».</p>
+<h4>2. Какие данные мы собираем</h4><ul><li>имя;</li><li>номер телефона или имя пользователя в Telegram;</li><li>название компании для корпоративных заказов;</li><li>сведения о заказе: изделие, размер, цвет, текст вышивки;</li><li>технические данные: cookie, IP-адрес, сведения о браузере.</li></ul>
+<h4>3. Зачем</h4><ul><li>чтобы ответить на заявку и рассчитать заказ;</li><li>чтобы сшить и передать заказ;</li><li>чтобы связаться с вами по заказу.</li></ul>
+<h4>4. Основание и сроки</h4><p>Данные обрабатываются на основании вашего согласия и для исполнения договора. Храним их до достижения целей обработки или до отзыва согласия, но не дольше 3 лет с последнего обращения.</p>
+<h4>5. Передача третьим лицам</h4><p>Мы не продаём ваши данные. Имя, телефон и адрес передаются только службе доставки. Данные хранятся на серверах в Российской Федерации.</p>
+<h4>6. Ваши права</h4><p>Вы можете узнать, какие данные мы храним, попросить их исправить или удалить и отозвать согласие. Напишите на ${O.email}, ответим в течение 10 рабочих дней.</p>
+<h4>7. Cookie</h4><p>Сайт использует cookie для работы форм и статистики. Их можно отключить в настройках браузера.</p>`,
+soglasie:`<h3>Согласие на обработку персональных данных</h3>
+<p>Отправляя форму на сайте ${O.site}, я свободно, своей волей и в своём интересе даю согласие ${O.name} (ИНН ${O.inn}, адрес: ${O.address}) на обработку моих персональных данных: имени, номера телефона или имени пользователя в Telegram, названия компании и сведений о заказе.</p>
+<p>Цели: ответ на заявку, расчёт и выполнение заказа, связь со мной по заказу.</p>
+<p>Действия с данными: сбор, запись, систематизация, хранение, уточнение, использование, передача службе доставки, удаление и уничтожение, с использованием средств автоматизации и без них.</p>
+<p>Согласие действует 3 года или до его отзыва. Отозвать согласие можно, написав на ${O.email}.</p>
+<p>Я ознакомлен(а) с политикой конфиденциальности.</p>`
+};
+</script>
+
+</body>
+</html>
